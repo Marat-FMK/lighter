@@ -16,23 +16,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c8Z-1q-6gm">
-                                <rect key="frame" x="107" y="44" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hLn-Uk-BEE">
-                                <rect key="frame" x="107" y="252" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z80-0p-dfr">
-                                <rect key="frame" x="107" y="460" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Cft-cR-Osk">
+                                <rect key="frame" x="107" y="44" width="200" height="616"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8Z-1q-6gm">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLn-Uk-BEE">
+                                        <rect key="frame" x="0.0" y="208" width="200" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z80-0p-dfr">
+                                        <rect key="frame" x="0.0" y="416" width="200" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hLn-Uk-BEE" firstAttribute="centerY" secondItem="Cft-cR-Osk" secondAttribute="centerY" id="I0P-TT-Aoa"/>
+                                    <constraint firstItem="hLn-Uk-BEE" firstAttribute="top" secondItem="Cft-cR-Osk" secondAttribute="top" constant="208" id="KKM-EX-s2e"/>
+                                </constraints>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhF-lB-FB6">
-                                <rect key="frame" x="132" y="728" width="150" height="58"/>
+                                <rect key="frame" x="132" y="725" width="150" height="58"/>
                                 <color key="backgroundColor" systemColor="systemFillColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="nGa-7H-wz6"/>
@@ -40,16 +46,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="switchingFlash" destination="BYZ-38-t0r" eventType="touchUpInside" id="WME-p6-OmV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
+                            <constraint firstItem="HhF-lB-FB6" firstAttribute="top" secondItem="Cft-cR-Osk" secondAttribute="bottom" constant="65" id="VNj-UV-vTp"/>
                             <constraint firstItem="HhF-lB-FB6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ygb-qq-ymQ"/>
                             <constraint firstItem="HhF-lB-FB6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bLR-5z-bfS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HhF-lB-FB6" secondAttribute="bottom" constant="76" id="pay-tu-tnW"/>
+                            <constraint firstItem="Cft-cR-Osk" firstAttribute="centerX" secondItem="HhF-lB-FB6" secondAttribute="centerX" id="e0L-eJ-hjK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HhF-lB-FB6" secondAttribute="bottom" constant="79" id="pay-tu-tnW"/>
+                            <constraint firstItem="Cft-cR-Osk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uYA-yJ-11p"/>
+                            <constraint firstItem="Cft-cR-Osk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="vOK-2i-mC8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="yellowLight" destination="hLn-Uk-BEE" id="BST-aN-h2x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
