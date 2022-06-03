@@ -47,7 +47,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="START"/>
                                 <connections>
-                                    <action selector="switchingFlash" destination="BYZ-38-t0r" eventType="touchUpInside" id="WME-p6-OmV"/>
+                                    <action selector="startButtonPassed" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Fc-mZ-ug4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -64,7 +64,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="yellowLight" destination="hLn-Uk-BEE" id="BST-aN-h2x"/>
+                        <outlet property="greenView" destination="Z80-0p-dfr" id="Xfh-ve-eyS"/>
+                        <outlet property="redView" destination="c8Z-1q-6gm" id="AkM-aI-1Qb"/>
+                        <outlet property="startButton" destination="HhF-lB-FB6" id="yFI-1f-rXx"/>
+                        <outlet property="yellowView" destination="hLn-Uk-BEE" id="ysb-dZ-t7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

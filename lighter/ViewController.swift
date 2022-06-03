@@ -6,23 +6,50 @@
 //
 
 import UIKit
-
+enum Currentight { case red, yellow, green}
 class ViewController: UIViewController {
 
-    @IBOutlet var redLight: UIView!
+    @IBOutlet var redView: UIView!
     
-    @IBOutlet var yellowLight: UIView!
+    @IBOutlet var yellowView: UIView!
     
-    @IBOutlet var greenLight: UIView!
+    @IBOutlet var greenView: UIView!
     
+    @IBOutlet var startButton: UIButton!
+    
+    private var currentlight = Currentight.red
+    private let lightIsOn: CGFloat = 1
+    private let lightIsOff: CGFloat = 0.3
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-
-    @IBAction func switchingFlash() {
+        startButton.layer.cornerRadius = 10
+        redView.alpha = lightIsOff
+        yellowView.alpha = lightIsOff
+        greenView.alpha = lightIsOff
     }
     
+    
+    
+        @IBAction func startButtonPassed() {
+        if startButton.currentTitle == "START"{
+            startButton.setTitle("Next", for: .normal)
+    }
+    
+        switch currentlight {
+        case .red:
+            greenView.alpha = lightIsOff
+            redView.alpha = lightIsOn
+            currentlight = .yellow
+        case .yellow:
+            redView.alpha = lightIsOff
+            yellowView.alpha = lightIsOn
+            currentlight = .green
+        case .green:
+            yellowView.alpha = lightIsOff
+            greenView.alpha = lightIsOn
+            currentlight = .red
+        }
+}
 }
 
